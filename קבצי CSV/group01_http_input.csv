@@ -1,0 +1,11 @@
+msg_id,app_protocol,src_port,dst_port,message,timestamp
+1,HTTP,client_browser,web_server,GET /index.html,0.001
+2,HTTP,web_server,client_browser,HTTP/1.1 200 OK,0.004
+3,HTTP,client_browser,web_server,GET /style.css,0.01
+4,HTTP,web_server,client_browser,HTTP/1.1 200 OK (CSS),0.014
+5,HTTP,client_browser,web_server,GET /script.js,0.02
+6,HTTP,web_server,client_browser,HTTP/1.1 200 OK (JS),0.025
+7,HTTP,client_browser,web_server,POST /api/login,0.03
+8,HTTP,web_server,client_browser,"HTTP/1.1 200 OK {""status"":""ok""}",0.033
+9,HTTP,client_browser,web_server,GET /dashboard,0.04
+10,HTTP,web_server,client_browser,HTTP/1.1 200 OK (HTML),0.044

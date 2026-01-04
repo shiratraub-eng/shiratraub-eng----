@@ -1,0 +1,11 @@
+msg_id,app_protocol,src_port,dst_port,message,timestamp
+1,RTP,media_client,media_server,Audio frame #1 (payload type=0),0.001
+2,RTP,media_client,media_server,Audio frame #2 (payload type=0),0.02
+3,RTP,media_client,media_server,Audio frame #3 (payload type=0),0.04
+4,RTP,media_client,media_server,Audio frame #4 (payload type=0),0.06
+5,RTP,media_server,media_client,Video frame #1 (payload type=96),0.08
+6,RTP,media_server,media_client,Video frame #2 (payload type=96),0.12
+7,RTP,media_client,media_server,Audio frame #5 (payload type=0),0.14
+8,RTP,media_server,media_client,Video frame #3 (payload type=96),0.18
+9,RTP,media_client,media_server,Audio frame #6 (payload type=0),0.2
+10,RTP,media_server,media_client,Video frame #4 (payload type=96),0.24
