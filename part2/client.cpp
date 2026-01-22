@@ -6,7 +6,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-char my_id = '?'; // המזהה של הלקוח
+char my_id = '?'; //המזהה של הלקוח
 
 void receive_messages(SOCKET sock) {
     char buffer[1024];
@@ -16,9 +16,9 @@ void receive_messages(SOCKET sock) {
 
         std::string msg(buffer, bytes);
 
-        // אם זו הודעה שמכילה את המזהה שלנו
+       
         if (msg.find("Your ID is: ") == 0) {
-            my_id = msg.back(); // מקבל את התו האחרון כ־ID
+            my_id = msg.back(); 
             std::cout << "Connected! Your ID is " << my_id << std::endl;
         }
         else {
@@ -59,7 +59,6 @@ int main() {
         std::getline(std::cin, msg);
         if (msg.empty()) continue;
 
-        // פורמט: targetID:message, לדוגמה B:שלום
         send(sock, msg.c_str(), static_cast<int>(msg.size()), 0);
     }
 
@@ -67,3 +66,4 @@ int main() {
     WSACleanup();
     return 0;
 }
+
