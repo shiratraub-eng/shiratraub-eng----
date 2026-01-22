@@ -5,7 +5,8 @@ CREATE TABLE users (
 
 CREATE TABLE messages (
     sender TEXT,
-    receiver TEXT,
+    receiver TEXT,   -- אם NULL, הודעה ציבורית
     message TEXT,
     timestamp DATETIME
+
 );
