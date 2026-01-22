@@ -1,0 +1,35 @@
+Data structure : SQL file.
+* Organized data storage– SQL lets me create tables with defined fields, like users and messages.
+* Links between tables – It’s easy to connect users and messages using IDs or usernames.
+* I can get private messages, public messages...
+SQL makes it easy to analyze data. clear presentation of information.
+
+------------------------------------------------------------------
+
+Explanation of the code
+
+*Server(Server.exe):
+
+The server starts by initializing Winsock (WSAStartup) to use sockets in Windows
+It creates a server socket that listens on port 5000.
+After starting to listen, it enters an infinite loop that accepts new clients using accept()
+For each client that connects:
+Give it a unique ID (A, B, C...) based on the order of connection
+Add the client to a map that links the ID to the SOCKET
+Send a welcome message to the client with its ID
+Create a new thread (handle_client) to handle messages from that client
+Each client thread:
+Reads messages from the client 
+Splits the message in a format
+Sends the message only to the right client, showing who sent it (From A: ...), Can also send a public message.
+
+*Client (Client.exe):
+
+The client also starts by initializing Winsock and creating a socket.
+Connects to the server at 127.0.0.1 : 5000.
+After connecting, it starts a thread to receive messages( receive_messages) that prints every message received:
+If the message is "Your ID is : X" – it saves its ID 
+Otherwise – it prints the message with the sender’s name
+In the main loop of the client:
+The user types a message in the format <recipientID>:<message>
+Sends the message to the server with send().
