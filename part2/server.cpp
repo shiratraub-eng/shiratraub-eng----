@@ -8,7 +8,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-std::map<char, SOCKET> clients_map; // מזהה → SOCKET
+std::map<char, SOCKET> clients_map; //מזהה→ SOCKET
 std::mutex clients_mutex;
 
 void handle_client(char id, SOCKET client_socket) {
@@ -20,7 +20,7 @@ void handle_client(char id, SOCKET client_socket) {
 
         std::string msg(buffer, bytes);
 
-        // פורמט הודעה: recipient:message
+        //פורמט: recipient:message
         if (msg.size() < 3 || msg[1] != ':') continue;
 
         char recipient = msg[0];
@@ -89,7 +89,7 @@ int main() {
         }
         std::cout << "Client " << id << " connected." << std::endl;
 
-        // שולח ללקוח את המזהה שלו
+        //שולח ללקוח את המזהה שלו
         std::string welcome_msg = "Your ID is: ";
         welcome_msg += id;
         send(client_socket, welcome_msg.c_str(), welcome_msg.size(), 0);
@@ -101,3 +101,4 @@ int main() {
     WSACleanup();
     return 0;
 }
+
